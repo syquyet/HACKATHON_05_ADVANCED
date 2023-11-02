@@ -33,6 +33,7 @@ function App() {
 
   // tăng số lượng mua
   const handleCreateQuantity = (id: number) => {
+    
     setQuantity(quantity + 1);
   };
   // giảm số lượng mua
@@ -47,10 +48,18 @@ function App() {
       <header>
         <span>
           Remaining:
-          {totalMoneyReceipt == 0 ? 270000000: 270000000 - totalMoneyReceipt}
-          USD
+          {totalMoneyReceipt == 0
+            ? 270000000000
+            : 270000000000 - totalMoneyReceipt}
+            USD
         </span>
-        <span>You only spent 0,00001% of the total</span>
+        <span>
+          You only spent{" "}
+          {totalMoneyReceipt == 0
+            ? 0
+            : (totalMoneyReceipt / 270000000000) * 100}
+          % of the total
+        </span>
       </header>
       <main>
         <div className="container">
