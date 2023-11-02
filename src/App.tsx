@@ -33,13 +33,13 @@ function App() {
 
   // tăng số lượng mua
   const handleCreateQuantity = (id: number) => {
-    
+
     setQuantity(quantity + 1);
   };
   // giảm số lượng mua
   const hanleReduceQuantity = (id: number) => {
     setQuantity(quantity - 1);
-    if (quantity < 0) {
+    if (quantity <= 0) {
       setQuantity(0);
     }
   };
